@@ -13,6 +13,7 @@
     "fetch-cookie": "^0.7.2",
     "isomorphic-fetch": "^2.2.1",
     "meow": "^5.0.0",
+    "path": "^0.12.7",
     "pump": "^3.0.0",
     "query-string": "^6.1.0",
     "readable-stream": "^3.0.2",
