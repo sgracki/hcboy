@@ -5,4 +5,7 @@ const router = express.Router()
 router.route('/')
     .post(doctorsCtrl.listTopDoctors)
 
+router.route('/specializations')
+    .get(doctorsCtrl.listPossibleSpecializations)
+
 module.exports = router

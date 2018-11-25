@@ -1,0 +1,9 @@
+<div class="a">
+    <input type="text" #specInput class="a_a" [(ngModel)]="searchText" placeholder="Enter specialization" />
+    <div class="a_b">
+        <div class="a_b_a" *ngFor="let spec of specializations | filter : searchText" (click)="pickSpecialization(spec)">{{spec}}</div>
+    </div>
+    <button class="a_c" (click)="searchText = '';specInput.focus()">
+        <img src="./assets/close.svg" alt="">
+    </button>
+</div>

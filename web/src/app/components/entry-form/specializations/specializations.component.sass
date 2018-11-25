@@ -1,0 +1,55 @@
+.a
+    position: relative
+
+    &_a
+        width: 100%
+        height: 48px
+        border: none
+        border-radius: 5px
+        box-shadow: 0 1px 8px -1px rgba(52,65,108,.25)
+        padding: 0 4px
+        font-size: 24px
+        font-weight: 300
+        font-family: 'Lato', sans-serif
+    
+    &_b
+        margin-top: 4px
+        background-color: #ffffff
+        max-height: 0
+        border: none
+        border-radius: 5px
+        box-shadow: 0 1px 8px -1px rgba(52,65,108,.25)
+        transition: max-height .15s
+        height: auto
+        overflow:
+            x: hidden
+            y: auto
+
+        &_a
+            cursor: pointer
+            height: 32px
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            padding: 0 16px
+            font-weight: 300
+            font-family: 'Lato', sans-serif
+            transition: background-color .1s
+
+            &:hover
+                background-color: rgb(248, 248, 248)
+
+    &_c
+        position: absolute
+        background-color: transparent
+        border: none
+        backgroud-color: red
+        height: 26px
+        width: 26px
+        top: 26px
+        right: 8px
+        transform: translateY(-50%)
+        cursor: pointer
+
+    &_a:focus + &_b
+        max-height: 450px

@@ -10,8 +10,14 @@ export class DoctorsService {
     }
 
     public getBestDoctors(data: any) {
-        console.log('1')
         return this.http.post(this.url, data)
+            .toPromise()
+            .then(res => res.json())
+            .catch(this.handleError)
+    }
+
+    public listPossibleSpecializations() {
+        return this.http.get(`${this.url}/specializations`)
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError)
