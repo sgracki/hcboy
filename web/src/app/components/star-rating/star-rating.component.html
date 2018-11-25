@@ -1,0 +1,9 @@
+<div class="a">
+    <div class="a_a">
+        <div class="a_a_a" *ngFor='let n of maxRate; let $index = index;'>
+            <img *ngIf="rating >= $index + 1" src="../assets/star.png" alt="">
+            <img *ngIf="rating < $index + 1" src="../assets/star-0.png" alt="">
+        </div>
+    </div>
+    <div class="a_b">({{reviews}})</div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter } from '@angular/core'
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core'
 import { DoctorsService } from 'src/app/services/doctors.service'
 
 @Component({
@@ -7,7 +7,8 @@ import { DoctorsService } from 'src/app/services/doctors.service'
     styleUrls: ['./specializations.component.sass']
 })
 export class SpecializationsComponent implements OnInit {
-    public onSpecPick = new EventEmitter()
+    @Input() doctorsLoading: Boolean
+    @Output() onSpecPick = new EventEmitter()
     public specializations: Array<string>
     public searchText: string
 
@@ -22,7 +23,7 @@ export class SpecializationsComponent implements OnInit {
         const currentSpecs = localStorage.getItem('recentSpecializations')
         console.log(currentSpecs)
 
-        localStorage.setItem('recentSpecializations', JSON.stringify({a:'b'}))
+        // localStorage.setItem('recentSpecializations', JSON.stringify()) !todo
     }
 
     public pickSpecialization(spec: string) {

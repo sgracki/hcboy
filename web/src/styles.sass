@@ -1,5 +1,53 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400')
+
+.animation-base
+    animation-duration: 0.5s
+    animation-fill-mode: both
+
+.suggestionsIntroAnimation
+    @extend .animation-base
+    animation-name: suggestionsIntroAnimation
+    animation-duration: 0.5s
+
+@keyframes suggestionsIntroAnimation
+    0%
+        height: 0
+        overflow: hidden
+
+    10%
+        height: 2px
+        width: 20px
+        overflow: hidden
+
+    50%
+        width: 420px
+        height: 20px
+        overflow: hidden
     
+    99%
+        overflow: hidden
+        height: 96px
+
+    100%
+        width: 420px
+        height: auto
+        overflow:
+            x: hidden
+            y: auto
+
+.fadeFromBottom
+    @extend .animation-base
+    animation-name: fadeFromBottom
+
+@keyframes fadeFromBottom
+    from
+        opacity: 0
+        transform: translateY(10%)
+
+    to
+        opacity: 1
+        transform: none
+
 @font-face 
     font-family: 'Gotham-bold'
     src: url('./assets/fonts/Gotham-Bold.ttf')
@@ -15,3 +63,10 @@ html, body
 
 div, input, button
     box-sizing: border-box
+
+a, a:visited
+    color: #333333
+    text-decoration: none
+
+a:active
+    color: #1A237E

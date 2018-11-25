@@ -5,7 +5,10 @@ import { EntryFormComponent } from './entry-form/entry-form.component';
 import { LandingItemComponent } from './landing-item/landing-item.component';
 import { AgmCoreModule } from '@agm/core';
 import { SpecializationsComponent } from './entry-form/specializations/specializations.component'
-import { PipesModule } from '../pipes/pipes.module'
+import { PipesModule } from '../pipes/pipes.module';
+import { LoadingComponent } from './loading/loading.component';
+import { DoctorComponent } from './entry-form/doctor/doctor.component';
+import { StarRatingComponent } from './star-rating/star-rating.component'
 
 @NgModule({
     imports: [
@@ -16,7 +19,7 @@ import { PipesModule } from '../pipes/pipes.module'
             apiKey: 'AIzaSyB6wxG6HeV800wrPkiir2BW2sL8AONTuSw'
         })
     ],
-    declarations: [EntryFormComponent, LandingItemComponent, SpecializationsComponent],
-    exports: [EntryFormComponent, LandingItemComponent]
+    declarations: [EntryFormComponent, LandingItemComponent, SpecializationsComponent, LoadingComponent, DoctorComponent, StarRatingComponent],
+    exports: [EntryFormComponent, LandingItemComponent, LoadingComponent, StarRatingComponent]
 })
 export class ComponentsModule { }

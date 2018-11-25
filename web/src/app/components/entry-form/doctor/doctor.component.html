@@ -1,0 +1,7 @@
+<div class="a">
+    <div class="a_a" [ngStyle]="{'background-image': 'url('+data.image+')'}"></div>
+    <div class="a_b">
+        <a href="{{data.link}}" target="_blank">{{data.name}}</a>
+        <star-rating [rating]="data.rating" [reviews]="data.reviews"></star-rating>
+    </div>
+</div>
