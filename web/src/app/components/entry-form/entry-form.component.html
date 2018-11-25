@@ -1,5 +1,8 @@
-<form>
-
-</form>
-
-<gmap [lat]="entryData.lat" [lon]="entryData.lon"></gmap>
+<div class="a">
+    <div *ngIf="mapImageUrl" class="a_a" [ngStyle]="{'background-image': 'url('+mapImageUrl+')'}" (click)="getLocation()">
+        <div class="a_a_a">
+            Propozycje:
+            <div class="a_a_a_a" *ngFor="let doctor of bestDoctors">{{doctor | json}}</div>
+        </div>
+    </div>
+</div>

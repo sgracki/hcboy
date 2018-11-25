@@ -8,20 +8,16 @@ function listTopDoctors(req, res, next) {
     .then(body =>{
         console.log(page)
         const $ = cheerio.load(body)
-        let doctorsData = {
-            "name":[],
-            "city":[],
-            "street":[],
-            "rating":[],
-            "reviews":[]
-        }
+        let doctorsData = []
 
         $("[data-object-type = 'doctor']").each(function(i, elem) {
-            doctorsData.name.push($("*[itemprop = 'name']", this).text())
-            doctorsData.city.push($(".city", this).first().text())
-            doctorsData.street.push($(".street", this).first().text())
-            doctorsData.rating.push($(".rating", this).first().attr('data-score'))
-            doctorsData.reviews.push($("span", ".rating", this).first().text().replace(/\D/g,''))
+            doctorsData.push({
+                name: $("*[itemprop = 'name']", this).text(),
+                city: $(".city", this).first().text(),
+                street: $(".street", this).first().text(),
+                rating: $(".rating", this).first().attr('data-score'),
+                reviews: $("span", ".rating", this).first().text().replace(/\D/g,''),
+            })
         })
         
         res.json(doctorsData)

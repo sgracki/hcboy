@@ -1,4 +1,5 @@
 import { Component, ElementRef } from '@angular/core'
+import { DoctorsService } from './services/doctors.service'
 
 @Component({
     selector: 'app-root',
@@ -6,6 +7,8 @@ import { Component, ElementRef } from '@angular/core'
     styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
+    constructor(private doctorsService: DoctorsService) {}
+
     public landingItems: Array<any> = [{
         text: `High quality health care no longer has to mean spending dozens of hours on research and another several hours in queues! With Health Care Boy you get access to information from thousands of patients, reviewers and doctors at your fingertips, all neatly structured and presented in an easy to digest form. Choosing the best doctor in your vicinity just got a lot easier.`,
         image: './assets/maps.png'

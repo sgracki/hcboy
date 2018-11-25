@@ -9,7 +9,6 @@
         <landing-item *ngFor="let landing of landingItems; let odd=odd;" [isOdd]="odd" [imageUrl]="landing.image" [text]="landing.text"></landing-item>
     </div>
     <div class="a_c" #entryForm>
-        {{entryData | json}}
         <entry-form></entry-form>
     </div>
 </div>
