@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 1001
+const port = process.env.PORT || 1001
 const bodyParser = require('body-parser')
 const path = require('path')
 
