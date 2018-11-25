@@ -1,8 +1,8 @@
-const express = require('../node_modules/express')
+const express = require('express')
 const app = express()
 const port = 1001
-const bodyParser = require('../node_modules/body-parser')
-const path = require('../node_modules/path')
+const bodyParser = require('body-parser')
+const path = require('path')
 
 app.use(bodyParser.json({limit: '50mb'}))
 app.use(bodyParser.urlencoded({extended: true,limit: '50mb'}))

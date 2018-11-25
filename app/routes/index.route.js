@@ -1,4 +1,4 @@
-const express = require('../../node_modules/express')
+const express = require('express')
 const doctorsRoute = require('./doctors.route')
 const twitterRoute = require('./twitter.route')
 const router = express.Router() // eslint-disable-line new-cap
