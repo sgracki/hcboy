@@ -15,17 +15,11 @@ export class EntryFormComponent implements OnInit {
     constructor(private doctorsService: DoctorsService) { }
 
     ngOnInit() {
-        if(window.navigator.geolocation)
-            window.navigator.geolocation.getCurrentPosition(this.setUserLocation.bind(this))
-    }
-
-    public getLocation() {
-        if(window.navigator.geolocation)
+        if (window.navigator.geolocation)
             window.navigator.geolocation.getCurrentPosition(this.setUserLocation.bind(this))
     }
 
     private setUserLocation({coords}) {
-        console.log(coords)
         this.mapImageUrl = `https://image.maps.api.here.com/mia/1.6/mapview?app_id=xgMo2GgK6YldlFQm5W1T&app_code=i-qtL4vwaRn-OnXEfwIOJg&c=${coords.latitude},${coords.longitude}&z=12&ml=pl&w=1600&h=1600&ppi=192`
         this.entryData.lat = coords.latitude
         this.entryData.lon = coords.longitude
