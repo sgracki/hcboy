@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'entry-form',
@@ -6,19 +6,24 @@ import { Component, OnInit, Input } from '@angular/core';
     styleUrls: ['./entry-form.component.sass']
 })
 export class EntryFormComponent implements OnInit {
-    @Input() entryData: any
+    private entryData: any = {}
+    @Output() formReady = new EventEmitter()
     constructor() { }
 
     ngOnInit() {
-        if(window.navigator.geolocation){
+        if(window.navigator.geolocation)
             window.navigator.geolocation.getCurrentPosition(this.setUserLocation.bind(this))
-        }
     }
 
     private setUserLocation({coords}) {
+        console.log(coords)
         this.entryData.lat = coords.latitude
         this.entryData.lon = coords.longitude
         this.entryData.accuracy = coords.accuracy
+    }
+
+    public submitForm() {
+        this.formReady.emit(this.entryData)
     }
 
 }

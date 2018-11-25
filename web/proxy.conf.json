@@ -1,0 +1,9 @@
+{
+    "/proxy/*": {
+        "target": "http://localhost:1001",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {"^/proxy" : ""}
+    }
+}
