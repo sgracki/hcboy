@@ -1,5 +1,5 @@
-const request = require('request-promise')
-const cheerio = require('cheerio')
+const request = require('../../node_modules/request-promise')
+const cheerio = require('../../node_modules/cheerio')
 const { specializations } = require('../static.data')
 
 function latLonToCity(lat, lon) {

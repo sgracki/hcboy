@@ -1,5 +1,5 @@
 const doctorsCtrl = require('../controllers/doctors.controller')
-const express = require('express')
+const express = require('../../node_modules/express')
 const router = express.Router()
 
 router.route('/')
