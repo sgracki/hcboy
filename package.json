@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "start": "npm config set -- --modules-folder app/node_modules && node app/app.js"
+        "start": "node app.js"
     },
     "dependencies": {
         "@angular/animations": "^6.1.0",
